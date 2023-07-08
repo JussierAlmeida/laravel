@@ -16,18 +16,37 @@
         </style>
     </head>
     <body>
-        <h1>Projeto de engresono desenvolvimento</h1>
+        <h1>Projeto de engreso desenvolvimento</h1>
         @if(10>15)
         <p>a condição é true</p>
         @endif
 
         <p>{{ $nome }}</p>
 
-        @if($nome =="jussier")
-        <p>o nome é {{$nome}} e tem {{$idade}}anos</p>
+        @if($nome =="pedro")
+        <p>o nome é pedro</p>
+        @elseif($nome == "jussier")
+        <p>o nome é {{$nome}} e tem {{$idade}} anos {{$profissao}}</p>
         @else 
-        <p>não existe</p>
+        <p>o nome não é jussier</p>
         @endif
+
+        @for($i = 0;$i < count($arr);$i++)
+                <p>{{$arr[$i]}} - {{$i}}</p>
+                @else($i == 0)
+                <p>inicia</p>
+                @else($i == 1)
+                <p>primeiro</p>
+                @else($i == 2)
+                <p>segundo</p>
+                @else($i == 3)
+                <p>terceiro</p>
+                @else($i == 4)
+                <p>quarto</p>
+                @else($i == 5)
+                <p>quinto</p>
+                @endif
+        @endfor
 
     </body>
 </html>
