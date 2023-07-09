@@ -31,22 +31,30 @@
         <p>o nome não é jussier</p>
         @endif
 
-        @for($i = 0;$i < count($arr);$i++)
+        @for($i = 0;$i < count($arr) ;$i++)
                 <p>{{$arr[$i]}} - {{$i}}</p>
-                @else($i == 0)
+                @if($i == 0)
                 <p>inicia</p>
-                @else($i == 1)
+               @elseif($i == 1)
                 <p>primeiro</p>
-                @else($i == 2)
+                @elseif($i == 2)
                 <p>segundo</p>
-                @else($i == 3)
+                @elseif($i == 3)
                 <p>terceiro</p>
-                @else($i == 4)
+                @elseif($i == 4)
                 <p>quarto</p>
                 @else($i == 5)
                 <p>quinto</p>
                 @endif
         @endfor
 
+        
+
+        @php
+                $nome ="joão";
+                echo $nome;
+        @endphp
+<!--  esse conpentario aparece no html -->
+{{-- esse comentario não aparece --}}
     </body>
 </html>
