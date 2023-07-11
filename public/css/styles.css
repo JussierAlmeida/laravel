@@ -1,4 +1,8 @@
+*{
+    font-family: 'roboto';
+    font-size: 2rem;
+}
 h1 {
     color: brown;
-    font-size: 2rem;
+    
 }
