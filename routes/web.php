@@ -12,20 +12,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    $nome = "jussier";
-    $idade = 34;
-    $arr = [10,20,30,40,50];
+    return 'olá, seja bem vindo ao curso de laravel!';
+});*/
 
-    return view('welcome',
-    ['nome' =>$nome,
-    'idade' =>$idade,
-    'profissao' => "programador",
-    'arr' => $arr
-    
-    ]);
-});
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal']);
+
+Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobreNos']);
+
+Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato']);
+//nome, categoria, assunto, mensagem
+
+
+Route::get(
+    '/contato/{nome}/{categoria}/{assunto}/{mensagem}', 
+    function(string $nome,string $categoria,string $assunto,string $mensagem){
+    echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
 });
