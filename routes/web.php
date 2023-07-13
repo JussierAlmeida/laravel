@@ -27,6 +27,11 @@ Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato']
 
 Route::get(
     '/contato/{nome}/{categoria}/{assunto}/{mensagem}', 
-    function(string $nome,string $categoria,string $assunto,string $mensagem){
+    function(
+        string $nome ='desconhecido',
+        string $categoria ='informação',
+        string $assunto ='contato',
+        string $mensagem ='mensagem não informada'
+    ){
     echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
 });
