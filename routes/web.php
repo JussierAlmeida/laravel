@@ -22,6 +22,19 @@ Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal']);
 Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobreNos']);
 
 Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato']);
+
+Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente']);
+
+Route::get('/login',[\App\Http\Controllers\loginController::class,'login']);
+
+Route::get('/fornecedores',[\App\Http\Controllers\fornecedoresController::class,'fornecedores']);
+
+Route::get('/produtos',[\App\Http\Controllers\produtosController::class,'produtos']);
+
+Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente']);
+
+
+
 //nome, categoria, assunto, mensagem
 
 

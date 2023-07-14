@@ -1,4 +1,4 @@
-<h3>Principal (view)</h3>
+<h3>login (view)</h3>
 
 <ul>
     <li>
@@ -17,7 +17,7 @@
         <a href="/cliente">clientes</a>
     </li>
     <li>
-        <a href="/fornecedores">fornecedores</a>
+        <a href="/Fornecedores">Fornecedores</a>
     </li>
     <li>
         <a href="/produtos">produtos</a>
