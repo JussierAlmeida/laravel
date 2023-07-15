@@ -17,25 +17,33 @@ Route::get('/', function () {
     return 'olá, seja bem vindo ao curso de laravel!';
 });*/
 
-Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal']);
+Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal'])->name('site.index');
+Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobreNos'])->name('site.sobreNos');
+Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato'])->name('site.contato');
+Route::get('/login',[\App\Http\Controllers\loginController::class,'login'])->name('site.login');
 
-Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobreNos']);
+Route::prefix('/app')->group(function(){
 
-Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato']);
+    Route::get('/fornecedores',[\App\Http\Controllers\fornecedoresController::class,'fornecedores'])->name('app.fornecedores');
+    Route::get('/produtos',[\App\Http\Controllers\produtosController::class,'produtos'])->name('app.produtos');
+    Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente'])->name('app.clientes');
+});
 
-Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente']);
+Route::get('/rota1', function(){
+    echo('Rota - 1');
+})->name('site.rota1');
 
-Route::get('/login',[\App\Http\Controllers\loginController::class,'login']);
+Route::get('/rota2', function(){
+    return redirect()->route('site.rota1');
+})->name('site.rota2');
 
-Route::get('/fornecedores',[\App\Http\Controllers\fornecedoresController::class,'fornecedores']);
-
-Route::get('/produtos',[\App\Http\Controllers\produtosController::class,'produtos']);
-
-Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente']);
+//Route::redirect('/rota2','rota1');
 
 
-
-//nome, categoria, assunto, mensagem
+/*Route::get('/rota2', function(){
+    echo('Rota - 2');
+})->name('site.rota2');
+*/
 
 
 /*Route::get(

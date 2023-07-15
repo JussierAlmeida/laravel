@@ -2,25 +2,25 @@
 
 <ul>
     <li>
-        <a href="/">principal</a>
+        <a href="{{ route ('site.index') }}">principal</a>
     </li>
     <li>
-        <a href="/sobre-nos">Sobre-nós</a>
+        <a href="{{ route ('site.sobreNos') }}">Sobre-nós</a>
     </li>
     <li>
-        <a href="/login">login</a>
+        <a href="{{ route ('site.login') }}">login</a>
     </li>
     <li>
-        <a href="/contato">Contatos</a>
+        <a href="{{ route ('site.contato') }}">Contatos</a>
     </li>
     <li>
-        <a href="/cliente">clientes</a>
+        <a href="{{ route ('app.clientes') }}">clientes</a>
     </li>
     <li>
-        <a href="/fornecedores">fornecedores</a>
+        <a href="{{ route ('app.fornecedores') }}">fornecedores</a>
     </li>
     <li>
-        <a href="/produtos">produtos</a>
+        <a href="{{route('app.produtos')}}">produtos</a>
     </li>
     
 </ul>
