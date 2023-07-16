@@ -29,13 +29,30 @@ Route::prefix('/app')->group(function(){
     Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente'])->name('app.clientes');
 });
 
-Route::get('/rota1', function(){
-    echo('Rota - 1');
-})->name('site.rota1');
+Route::get('/Teste/{p1}/{p2}', 'TesteController@Teste')->name('Teste');
 
+Route::fallback(function(){
+    echo 'A rota acessada não existe. <a href="'.route ('site.index').'">clique aqui</a> para ir para pagina inicial';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 Route::get('/rota2', function(){
     return redirect()->route('site.rota1');
 })->name('site.rota2');
+*/
+
 
 //Route::redirect('/rota2','rota1');
 
