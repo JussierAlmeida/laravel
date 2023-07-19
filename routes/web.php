@@ -29,7 +29,7 @@ Route::prefix('/app')->group(function(){
     Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente'])->name('app.clientes');
 });
 
-Route::get('/Teste/{p1}/{p2}', 'TesteController@Teste')->name('Teste');
+Route::get('/teste/{p1}/{p2}', 'testeController@teste')->name('teste');
 
 Route::fallback(function(){
     echo 'A rota acessada não existe. <a href="'.route ('site.index').'">clique aqui</a> para ir para pagina inicial';
