@@ -11,9 +11,18 @@
     }
 */
 
+//comparação do if para unless
+    /*if (!<condition>) {
+        # code...
+    }*/
+
 @endphp
+@dd($fornecedores);
    
-    @if(count($fornecedores)> 0 && count($fornecedores)< 10)
+    {{--@unless executa se o resultado for false--}}
+
+
+    {{--@if(count($fornecedores)> 0 && count($fornecedores)< 10)
 
     <h3> Existem alguns fornecedores cadastrados</h3> 
 
@@ -25,4 +34,4 @@
      
      <h3> ainda não existe fornecedores cadastrados</h3> 
      @endif
-
+--}}
