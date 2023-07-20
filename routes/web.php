@@ -24,7 +24,10 @@ Route::get('/login',[\App\Http\Controllers\loginController::class,'login'])->nam
 
 Route::prefix('/app')->group(function(){
 
-    Route::get('/fornecedores',[\App\Http\Controllers\fornecedoresController::class,'fornecedores'])->name('app.fornecedores');
+
+
+    Route::get('/fornecedores','FornecedorController@index')->name('app.fornecedores');
+    //Route::get('/fornecedores',[\App\Http\Controllers\fornecedoresController::class,'fornecedores'])->name('app.fornecedores');
     Route::get('/produtos',[\App\Http\Controllers\produtosController::class,'produtos'])->name('app.produtos');
     Route::get('/cliente',[\App\Http\Controllers\clienteController::class,'cliente'])->name('app.clientes');
 });
