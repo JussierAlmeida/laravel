@@ -18,7 +18,7 @@ Route::get('/', function () {
 });*/
 
 Route::get('/',[\App\Http\Controllers\PrincipalController::class,'principal'])->name('site.index');
-Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobreNos'])->name('site.sobreNos');
+Route::get('/sobre-nos',[\App\Http\Controllers\sobreNosController::class,'sobrenos'])->name('site.sobrenos');
 Route::get('/contato',[\App\Http\Controllers\contatoController::class,'contato'])->name('site.contato');
 Route::get('/login',[\App\Http\Controllers\loginController::class,'login'])->name('site.login');
 
