@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Super Gestão - Sobre Nós</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="{{asset('css/estilo_basico.css')}}">
+@extends('site.layouts.basico')
 
-        
-    </head>
+@section('Titulo', 'Sobre Nós')
 
-    <body>
+@section('Conteudo')
         <div class="topo">
 
             <div class="logo">
@@ -53,5 +47,4 @@
                 <img src="{{asset('img/mapa.png')}}">
             </div>
         </div>
-    </body>
-</html>
+@endsection    
