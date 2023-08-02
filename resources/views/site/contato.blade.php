@@ -12,6 +12,7 @@
             <div class="informacao-pagina">
                 <div class="contato-principal">
                     <form action={{route('site.contato')}} method="get">
+                        @csrf
                         <input name="Nome:" type="text" placeholder="Nome" class="borda-preta">
                         <br>
                         <input name="Telefone" type="text" placeholder="Telefone" class="borda-preta">
