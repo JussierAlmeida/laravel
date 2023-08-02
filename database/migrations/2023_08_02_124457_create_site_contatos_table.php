@@ -19,8 +19,6 @@ return new class extends Migration
             $table->integer('motivo_contato');
             $table->text('mensagem');
             $table->timestamps();
-           
-
         });
     }
 
