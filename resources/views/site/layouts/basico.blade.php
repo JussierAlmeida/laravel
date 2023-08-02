@@ -9,8 +9,8 @@
     </head>
 
     <body>
-        @include('site._partials.topo')
+        @include('site.layouts._partials.topo')
        @yield('Conteudo')
-       @include('site._partials.roda_pe')
+       @include('site.layouts._partials.roda_pe')
     </body>
     </html>
