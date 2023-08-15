@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema:: create('uniddaders', function(Blueprint $table){
+        Schema::create('unidades', function(Blueprint $table){
             $table->id();
             $table->string('unidade' ,5);
             $table->string('descricao' ,30);
             $table->timestamps();
     });
     //add relacionamento com produtos
-        Schema:: table('produtos', function(Blueprint $table){
-            $table->unsignedBigInteger('uniddade_id');
-            $table->foreign('uniddade_id')->references('id')->on('uniddaders');
+        Schema::table('produtos', function(Blueprint $table){
+            $table->unsignedBigInteger('unidade_id');
+            $table->foreign('unidade_id')->references('id')->on('unidades');
     });
 
     //add relacionamento com produtos_detalhes
-    Schema:: table('produto_detalhes', function(Blueprint $table){
-        $table->unsignedBigInteger('uniddade_id');
-        $table->foreign('uniddade_id')->references('id')->on('uniddaders');
+    Schema::table('produto_detalhes', function(Blueprint $table){
+        $table->unsignedBigInteger('unidade_id');
+        $table->foreign('unidade_id')->references('id')->on('unidades');
 });
 }
 
@@ -36,25 +36,26 @@ return new class extends Migration
     public function down(): void
     {
         //remove a produtos_detalhes da tabela unidaders
-        Schema:: table('produto_detalhes', function(Blueprint $table){
+        Schema::table('produto_detalhes', function(Blueprint $table){
             //remove fk
-            $table->dropForeign('produtos_detalhes_uniddade_id_foreign');
+            $table->dropForeign('produto_detalhes_unidade_id_foreign');
 
             //remove coluna unidade
-            $table->dropColumn('uniddade_id');
+            $table->dropColumn('unidade_id');
     });
 
         //remove a produtos da tabela unidaders
-        Schema:: table('produtos', function(Blueprint $table){
+        Schema::table('produtos', function(Blueprint $table){
             //remove fk
-            $table->dropForeign('produto_uniddade_id_foreign');
+            $table->dropForeign('produtos_unidade_id_foreign');
 
             //remove coluna unidade
-            $table->dropColumn('uniddade_id');
+            $table->dropColumn('unidade_id');
     });
 
 
         //remove a tabela unidaders
-        Schema::dropIfExists('uniddaders');
+        Schema::dropIfExists('unidades');
     }
 };
+
