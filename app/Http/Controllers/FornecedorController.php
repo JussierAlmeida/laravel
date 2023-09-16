@@ -6,30 +6,29 @@ use Illuminate\Http\Request;
 
 class FornecedorController extends Controller
 {
-    public function index(){
+    public function index() {
         $fornecedores = [
             0 => [
-                'nome'=>'Natal Computer',
-                'status'=>'Inativo',
-                'cnpj'=>'1513135844321',
-                'ddd' => '11',
-                'telefone' => ' 0000-0000'
+                'nome' => 'Fornecedor 1',
+                'status' => 'N',
+                'cnpj' => '0',
+                'ddd' => '', //São Paulo (SP)
+                'telefone' => '0000-0000'
             ],
             1 => [
-                'nome'=>'Megabity',
-                'status'=>'Ativo',
-                'cnpj'=>null,
-                'ddd' => '85',
-                'telefone' => ' 0000-1111'
+                'nome' => 'Fornecedor 2',
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '85', //Fortaleza (CE)
+                'telefone' => '0000-0000'
             ],
             2 => [
-                'nome'=>'Positivo',
-                'status'=>'Inativo',
-                'cnpj'=>'65454313846446',
-                'ddd' => '32',
-                'telefone' => ' 0000-2222'
-            ],
-        
+                'nome' => 'Fornecedor 2',
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '32', //Juiz de fora (MG)
+                'telefone' => '0000-0000'
+            ]
         ];
 
         return view('app.fornecedor.index', compact('fornecedores'));
